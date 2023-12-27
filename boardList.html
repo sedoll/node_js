@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Express Board to HTML</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+    <h2>Node Express Board to HTML</h2>
+    <div id="con1">
+
+    </div>
+    <hr>
+    <div id="con2">
+
+    </div>
+    <script>
+    $(document).ready(function(){
+        $.ajax({
+            url:"http://localhost:4000/board/list",
+            type:"post",
+            enctype:"UTF-8",
+            dataType:"json",
+            sucess:function(rows){
+                console.log(rows);
+            },
+            error:function(err){
+                console.log(err);
+            }
+        });
+    });    
+    </script>
+</body>
+</html>
